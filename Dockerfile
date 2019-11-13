@@ -2,7 +2,7 @@ FROM dontomage/archlinux-arm
 RUN pacman -Sy --noconfirm gitea && pacman -Scc --noconfirm
 COPY --chown=root:gitea app.ini /etc/gitea/app.ini
 COPY --chown=root:gitea entrypoint.sh /
-EXPOSE 3000
+EXPOSE 3000 2222
 VOLUME ["/etc/gitea","/var/lib/gitea"]
 USER gitea:gitea
 ENV USER=gitea
